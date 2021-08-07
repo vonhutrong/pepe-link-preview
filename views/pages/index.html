@@ -16,12 +16,7 @@
     <div class="container">
         <div id="grid">
             <% for (const [key, value] of Object.entries(emojis)) { %>
-            <div class="element">
-                <div class="img-wrap">
-                    <img class="image" src="<%= value %>" onclick="copyLinkToClipboard('<%= key %>')"/>
-                </div>
-                <span><%= key %></span>
-            </div>
+            <%- include('../partials/meme', {key: key, value: value}); %>
             <% }; %>
         </div>
     </div>

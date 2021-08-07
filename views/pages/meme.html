@@ -5,8 +5,6 @@
   <%- include('../partials/link-preview-head', {link: link, meme: meme}); %>
 </head>
 <body>
-<main>
-  <img src="<%= link %>"/>
-</main>
+<%- include('../partials/meme', {key: meme, value: link}); %>
 </body>
 </html>
