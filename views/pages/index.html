@@ -3,17 +3,18 @@
 <head>
     <%- include('../partials/head'); %>
     <style>
-        .list {
-            display: flex;
-            flex-wrap: wrap;
+        #grid {
+            display: grid;
+            width: 100%;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
         }
     </style>
 </head>
 <body>
 
 <main>
-    <div>
-        <div class="list">
+    <div class="container">
+        <div id="grid">
             <% for (const [key, value] of Object.entries(emojis)) { %>
             <div class="element">
                 <div class="img-wrap">
