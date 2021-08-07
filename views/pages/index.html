@@ -2,15 +2,23 @@
 <html lang="en">
 <head>
     <%- include('../partials/head'); %>
+    <style>
+        .list {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    </style>
 </head>
 <body>
 
 <main>
     <div>
-        <div>
+        <div class="list">
             <% for (const [key, value] of Object.entries(emojis)) { %>
-            <div>
-                <img src="<%= value %>" onclick="myFunction('<%= key %>')"/>
+            <div class="element">
+                <div class="img-wrap">
+                    <img class="image" src="<%= value %>" onclick="copyLinkToClipboard('<%= key %>')"/>
+                </div>
                 <span><%= key %></span>
             </div>
             <% }; %>
@@ -19,12 +27,8 @@
 </main>
 
 <script>
-    function myFunction(key) {
-        copy_link(key)
-    }
-
-    function copy_link(id) {
-        var value = window.location.href + document.getElementById(id).getAttribute("href");
+    function copyLinkToClipboard(key) {
+        var value = window.location.href + key;
         var input_temp = document.createElement("input");
         input_temp.value = value;
         document.body.appendChild(input_temp);
