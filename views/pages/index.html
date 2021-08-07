@@ -26,8 +26,34 @@
         </li>
       <% }); %>
     </ul>
+    <ul>
+      <% for (const [key, value] of Object.entries(emojis)) { %>
+        <li>
+          <strong><%= key %></strong>
+          <a id="<%= key %>" href="<%= key %>">open</a>
+          <button onclick="myFunction('<%= key %>')">copy</button>
+          <img src="<%= value %>"/>
+        </li>
+      <% }; %>
+    </ul>
   </div>
 </main>
+
+<script>
+  function myFunction(key) {
+    copy_link(key)
+  }
+
+  function copy_link(id){
+    var value = window.location.href + document.getElementById(id).getAttribute("href");
+    var input_temp = document.createElement("input");
+    input_temp.value = value;
+    document.body.appendChild(input_temp);
+    input_temp.select();
+    document.execCommand("copy");
+    document.body.removeChild(input_temp);
+  }
+</script>
 
 <footer>
   <%- include('../partials/footer'); %>
