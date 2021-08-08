@@ -8,12 +8,21 @@
             width: 100%;
             grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
         }
+
+        .instruction {
+            padding-top: 1em
+        }
     </style>
 </head>
 <body>
 
 <main>
     <div class="container">
+        <div class="instruction">
+            <div class="alert alert-primary" role="alert">
+                Click on a picture to copy the link
+            </div>
+        </div>
         <div id="grid">
             <% for (const [key, value] of Object.entries(emojis)) { %>
             <%- include('../partials/meme', {key: key, value: value}); %>
