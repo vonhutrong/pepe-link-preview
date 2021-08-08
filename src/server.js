@@ -1,9 +1,9 @@
 var express = require('express');
 var app = express();
-const pepe = require('./src/emoji/pepe');
+const pepe = require('./emoji/pepe');
 
-//app.set('view engine', 'ejs');
 app.engine('html', require('ejs').renderFile);
+app.set('views', './src/views/')
 app.set('view engine', 'html');
 
 app.get('/', function(req, res) {
