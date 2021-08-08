@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('../partials/head'); %>
+  <%- include('../partials/link-preview-head', {link: link, meme: meme}); %>
+</head>
+<body>
+<%- include('../partials/meme', {key: meme, value: link}); %>
+</body>
+</html>
