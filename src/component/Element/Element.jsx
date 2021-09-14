@@ -13,7 +13,7 @@ export default function Element(props) {
     return (
         <div className="element">
             <div className="img-wrap">
-                <img className="image" src={props.meme.url} onClick={copyLinkToClipboard} />
+                <img className="image" src={props.meme.url} onClick={copyLinkToClipboard} alt="meme"/>
             </div>
             <span>blood</span>
         </div>

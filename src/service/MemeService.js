@@ -1,5 +1,5 @@
 import { join } from 'path'
-import { Low, JSONFile } from 'lowdb/lib'
+import { JSONFile } from 'lowdb/lib'
 
 
 
@@ -133,20 +133,6 @@ export default function getBootstrapData() {
     // Use JSON file for storage
     const file = join(__dirname, 'db.json')
     console.log("Path: ", file);
-    const adapter = new JSONFile(file)
-    const db = new Low(adapter)
-
-    // // Read data from JSON file, this will set db.data content
-    //  db.read()
-
-    // // db.data = db.data != null ? db.data : { memes: [] }
-
-    // console.log("DB data: ", db.data);
-    // if (db.datadb.data.memes.length === 0) {
-    //     db.data.memes.push(bootstrapData);
-    //      db.write()
-    // }
-
-
+    new JSONFile(file);
     return bootstrapData;
 }

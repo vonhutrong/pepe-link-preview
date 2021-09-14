@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import MemeGrid from './component/grid/MemeGrid';
 import getBootStrapData from './service/MemeService';
