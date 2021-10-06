@@ -15,7 +15,7 @@ export default function Element(props) {
             <div className="img-wrap">
                 <img className="image" src={props.meme.url} onClick={copyLinkToClipboard} alt="meme"/>
             </div>
-            <span>blood</span>
+            <span>{props.meme.key}</span>
         </div>
     );
 }
