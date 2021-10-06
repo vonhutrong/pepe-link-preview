@@ -6,8 +6,8 @@ var toastr = require("toastr")
 export default function Element(props) {
 
     function copyLinkToClipboard() {
-        navigator.clipboard.writeText(props.meme.url);
-        toastr.info('Copied "' + props.meme.key + '" to clipboard!')
+        navigator.clipboard.writeText(`${window.location.origin}/${props.meme.key}`);
+        toastr.info(`Copied ${props.meme.key} to clipboard!`)
     }
 
     return (
